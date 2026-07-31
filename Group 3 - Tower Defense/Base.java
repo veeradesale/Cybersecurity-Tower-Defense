@@ -16,7 +16,7 @@ public class Base extends Actor
      */
     public Base()
     {
-        base = new GreenfootImage("wall.png");
+        base = new GreenfootImage("computer.png");
         setImage(base);
     }
     /**
