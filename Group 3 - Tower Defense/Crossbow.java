@@ -1,37 +1,40 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+
 /**
- * Shoots crossbow at enemies. Low ROF, high damage, and high cost.
+ * Strong Password tower.
+ * Blocks phishing attacks with fast protection.
  * 
- * @author Sisi Li
- * @version 1/28/2021
+ * @author Kelly
+ * @version 07/30/26
  */
 public class Crossbow extends Towers
 {
     /**
-     * Contructor for crossbow. Initializes inherited variables.
+     * Constructor for Strong Password.
      */
-    public Crossbow() {  
-        //Initialize animation frames
-        lv1Image1 = new GreenfootImage("crossbow_lv1_01.png");
-        lv1Image2 = new GreenfootImage("crossbow_lv1_02.png");
-        lv2Image1 = new GreenfootImage("crossbow_lv2_01.png");
-        lv2Image2 = new GreenfootImage("crossbow_lv2_02.png");
+    public Crossbow()
+    {
+        lv1Image1 = new GreenfootImage("password.png");
+        lv1Image2 = new GreenfootImage("password.png");
+        lv2Image1 = new GreenfootImage("password.png");
+        lv2Image2 = new GreenfootImage("password.png");
         setImage(lv1Image1);
-        //Initialize firing variables. 
-        range = 200;   
+
+        range = 100;
         ROF = 20;
         newROF = 15;
         projSpeed = 7;
-        damage = 1;
-        newDamage = 2;
-        cost = 100;
-        upgradeCost = 150;
+        damage = 10;
+        newDamage = 15;
+        cost = 50;
+        upgradeCost = 20;
     }
+
     /**
-     * Fires at enemy
+     * Fires at the closest enemy.
      */
-    public void act() 
+    public void act()
     {
         count++;
         targetClosestEnemy(false);

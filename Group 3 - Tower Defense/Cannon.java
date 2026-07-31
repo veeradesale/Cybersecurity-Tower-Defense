@@ -1,36 +1,44 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Shoots catapult at enemies. High ROF, low damage, and low cost.
+ * Software Update tower.
+ * Protects the computer from cyber attacks.
  * 
- * @author Sisi Li
- * @version 1/28/2021
+ * @author Kelly
+ * @version 07/30/26
  */
 public class Cannon extends Towers
 {
     /**
-     * Act - do whatever the Cannon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor for Software Update.
      */
-    public Cannon() {    
-        lv1Image1 = new GreenfootImage("cannon_lv1.png");
-        lv1Image2 = new GreenfootImage("cannon_lv1.png");
-        lv2Image1 = new GreenfootImage("cannon_lv2.png");
-        lv2Image2 = new GreenfootImage("cannon_lv2.png");
+    public Cannon()
+    {
+        // Images
+        lv1Image1 = new GreenfootImage("update.png");
+        lv1Image2 = new GreenfootImage("update.png");
+        lv2Image1 = new GreenfootImage("update.png");
+        lv2Image2 = new GreenfootImage("update.png");
         setImage(lv1Image1);
-        range = 400;   
+
+        // Tower stats
+        range = 400;
         ROF = 30;
         newROF = 25;
         projSpeed = 5;
-        damage = 2;
-        newDamage = 5;
-        upgradeCost = 300;
-        cost = 200;
+        damage = 20;
+        newDamage = 30;
+
+        cost = 100;
+        upgradeCost = 35;
     }
-    public void act() 
+
+    /**
+     * Fires at the closest enemy.
+     */
+    public void act()
     {
         count++;
         targetClosestEnemy(true);
-    }    
+    }
 }

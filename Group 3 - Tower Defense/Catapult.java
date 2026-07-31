@@ -1,39 +1,44 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Shoots cannonball at enemies. Medium ROF, damage, and cost.
+ * Firewall tower.
+ * Blocks cyber threats with powerful protection.
  * 
- * @author Sisi Li
- * @version 1/28/2021
+ * @author Kelly
+ * @version 07/30/26
  */
 public class Catapult extends Towers
 {
-     /**
-     * Constructor for cannon. Initializes inherited variables. 
+    /**
+     * Constructor for Firewall. Initializes inherited variables.
      */
-    public Catapult() {    
-        //Initialize animation frames
-        lv1Image1 = new GreenfootImage("catapult_lv1_01.png");
-        lv1Image2 = new GreenfootImage("catapult_lv1_02.png");
-        lv2Image1 = new GreenfootImage("catapult_lv2_01.png");
-        lv2Image1 = new GreenfootImage("catapult_lv2_02.png");
+    public Catapult()
+    {
+        // Initialize animation frames
+        // Replace these image names later if you get firewall images.
+        lv1Image1 = new GreenfootImage("firewall.png");
+        lv1Image2 = new GreenfootImage("firewall.png");
+        lv2Image1 = new GreenfootImage("firewall.png");
+        lv2Image2 = new GreenfootImage("firewall.png");
         setImage(lv1Image1);
-        //Initialize firing variables
-        range = 500;   
-        ROF = 20; 
+
+        // Initialize tower stats
+        range = 160;
+        ROF = 20;
         newROF = 32;
         projSpeed = 7;
-        damage = 3;
-        newDamage = 5;
-        cost = 300;
-        upgradeCost = 450;
+        damage = 30;
+        newDamage = 40;
+        cost = 150;
+        upgradeCost = 50;
     }
+
     /**
-     * Fires at enemy
+     * Fires at enemies.
      */
-    public void act() 
+    public void act()
     {
         count++;
         targetClosestEnemy(true);
-    }    
+    }
 }

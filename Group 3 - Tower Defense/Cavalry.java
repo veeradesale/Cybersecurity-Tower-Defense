@@ -1,33 +1,36 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * A type of enemy
+ * A malware enemy.
  * 
- * @author (Cassidy Li) 
- * @version (01/28/21)
+ * @author Kelly
+ * @version 07/30/26
  */
 public class Cavalry extends Enemies
 {
     /**
-     * Main constructors, sets image, speed, and Hp of cavalry
+     * Main constructor, sets image, speed, and HP of malware.
      */
-
-    public Cavalry(){
-        image = new GreenfootImage("cavalry.png");
+    public Cavalry()
+    {
+        image = new GreenfootImage("malware.png");
         setImage(image);
+
         speed = 2;
-        maxHp = 20;
+        maxHp = 100;
         currHp = maxHp;
-        name = "Calvary";
-        score = 20;
+
+        name = "Malware";
+        score = 30;
         money = 15;
     }
+
     /**
-     * Act - Moves sword man and removes it if it died
+     * Moves the malware and removes it if it dies.
      */
-    public void act() 
+    public void act()
     {
-        move();  
+        move();
         removeIfDead();
-    }    
+    }
 }

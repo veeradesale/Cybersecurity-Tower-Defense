@@ -1,32 +1,36 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * A type of enemy
+ * A phishing attack enemy.
  * 
- * @author (Cassidy Li) 
- * @version (01/28/21)
+ * @author Kelly
+ * @version 07/30/26
  */
 public class CrossbowMan extends Enemies
 {
     /**
-     * Main constructors, sets image, speed, and Hp of crossbow man
+     * Sets the image, speed, health, name, score, and money reward.
      */
-    public CrossbowMan(){
-        image = new GreenfootImage("crossbow_knight_01.png");
+    public CrossbowMan()
+    {
+        image = new GreenfootImage("phishing.png");
         setImage(image);
-        speed = 1;
-        maxHp = 10;
+
+        speed = 3;
+        maxHp = 50;
         currHp = maxHp;
-        name = "Crossbow";
-        score = 15;
+
+        name = "Phishing";
+        score = 20;
         money = 10;
     }
+
     /**
-     * Act - Moves sword man and removes it if it died
+     * Moves the phishing attack and removes it when defeated.
      */
-    public void act() 
+    public void act()
     {
         move();
         removeIfDead();
-    }    
+    }
 }
