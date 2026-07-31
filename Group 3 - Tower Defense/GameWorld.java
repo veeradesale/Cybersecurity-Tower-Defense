@@ -315,20 +315,25 @@ public class GameWorld extends World {
      * Spwan Enemies in the GameWorld
      */
     private void spawnEnemies()
+        /**
+     * Spawn Enemies in the GameWorld.
+     * Phishing spawns from the start, Malware after score 50, Ransomware after 100.
+     */
+    private void spawnEnemies()
     {      
         randomize = Greenfoot.getRandomNumber(spawnRate);
         if(!startGrid.isPathAvailable()){
-            if(randomize == 1 && score > 500)
+            if(randomize == 1)
             {
-                addObject(new Cavalry(), -25, 275);
+                addObject(new Phishing(), -25, 275);
             }
-            if(randomize == 2)
+            if(randomize == 2 && score >= 50)
             {
-                addObject(new CrossbowMan(), -25, 275);
+                addObject(new Malware(), -25, 275);
             }
-            if(randomize == 3 && score > 250)
+            if(randomize == 3 && score >= 100)
             {
-                addObject(new SwordMan(), -25, 275);
+                addObject(new Ransomware(), -25, 275);
             }
         }
     }
